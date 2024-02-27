@@ -7,18 +7,30 @@ function getComputerChoice () {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection.toLowerCase();
-    if (computerSelection === "rock")  {
+    if (computerSelection === playerSelection)  {
         return "tie";
-    } else if (computerSelection === "paper") {
+    } else if (computerSelection === "paper" && playerSelection == "rock") {
         computerScore++;
         return "player loose";
-    } else; {
+    } else if (computerSelection === "paper" && playerSelection == "scissors") {
         playerScore++;
         return "player win"
+    } else if (computerSelection === "rock" && playerSelection == "paper") {
+        computerScore++;
+        return "player loose";
+    } else if (computerSelection === "rock" && playerSelection == "scissors") {
+        playerScore++;
+        return "player win"
+    } else if (computerSelection === "scissors" && playerSelection == "paper") {
+        computerScore++;
+        return "player loose";
+    } else if (computerSelection === "scissors" && playerSelection == "rock") {
+        playerScore++;
+        return "player win";
     }
-} 
+}
 
-const playerSelection = "rock";
+const playerSelection = prompt();
 
 let playerScore = 0
 let computerScore = 0
