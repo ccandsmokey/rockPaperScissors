@@ -29,11 +29,11 @@ function playRound(playerSelection, computerSelection) {
         playerScore++;
         p.textContent = "Computer chose scissors. Player!";
     }
+    keepScore()
     div.textContent = `Player Score: ${playerScore}:` + ` Computer Score: ${computerScore}`
 
-}
 
-// const playerSelection = prompt();
+}
 
 const rockBtn = document.createElement("button");
 rockBtn.textContent = ("Rock");
@@ -63,30 +63,26 @@ buttons.forEach(button => {
     });
 });
 
-function pTContext (point) {
-    if (point === "tie") {
-        p.textContent = "tie";
-    }
-}
-
-
-
-
 let playerScore = 0
 let computerScore = 0
 
 div.textContent = `Player Score: ${playerScore}:` + ` Computer Score: ${computerScore}`
 
-function playGame() {
-    // for (let step = 0; step < 5; step++)
-    //     playRound(playerSelection, getComputerChoice())
-    if (playerScore > computerScore) {
-        return"Player Wins!!";
-    } else if (playerScore < computerScore) {
-        return "Computer Wins!!";
-    } else {
-        return "Tie!!";
-    }      
+function keepScore() {
+    if (playerScore === 5) {
+        alert("You Win!");
+        location.reload();
+    } else if (computerScore === 5) {
+        alert("Sorry Computer Wins!");
+        location.reload();
+    }
 }
+//     if (playerScore > computerScore) {
+//         return"Player Wins!!";
+//     } else if (playerScore < computerScore) {
+//         return "Computer Wins!!";
+//     } else {
+//         return "Tie!!";
+//     }      
+// }
 
-console.log(playGame())
